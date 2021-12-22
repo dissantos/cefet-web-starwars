@@ -6,6 +6,7 @@
 
 import { play } from "./music.js";
 import { restartAnimation } from "./restart-animation.js";
+import { numberToRoman } from "./roman.js";
 const API_ENDPOINT = 'https://swapi.dev/api'
 
 
@@ -30,23 +31,6 @@ const data = await response.json();
 
 
 let movieList = data.results.sort((a, b) => a.episode_id - b.episode_id);
-
-
-const numberToRoman = (number) => {
-    const romans = {
-        1 : 'I',
-        2 : 'II',
-        3 : 'III',
-        4 : 'IV',
-        5 : 'V',
-        6 : 'VI',
-        7 : 'VII',
-        8 : 'VIII',
-        9 : 'IX'
-    };
-
-    return romans[number];
-}
 
 
 let listEl = document.querySelector('#filmes ul');
